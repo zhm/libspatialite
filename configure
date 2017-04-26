@@ -17498,7 +17498,8 @@ for ac_lib in '' proj; do
     ac_res="none required"
   else
     ac_res=-l$ac_lib
-    LIBS="-l$ac_lib -lm $ac_func_search_save_LIBS"
+    # LIBS="-l$ac_lib -lm $ac_func_search_save_LIBS"
+    LIBS="/usr/local/opt/proj/lib/libproj.a -lm $ac_func_search_save_LIBS"
   fi
   if ac_fn_c_try_link "$LINENO"; then :
   ac_cv_search_pj_init_plus=$ac_res
@@ -18124,7 +18125,7 @@ else
 fi
 
   LIBS="$LIBS_SAVE"
-  LIBS="$LIBS $GEOS_LDFLAGS -lgeos_c"
+  LIBS="$LIBS $GEOS_LDFLAGS /usr/local/opt/geos/lib/libgeos_c.a /usr/local/opt/geos/lib/libgeos.a"
 
   #-----------------------------------------------------------------------
   #   --enable-controlpoints
@@ -18240,7 +18241,7 @@ fi
 done
 
 	  _save_libs="$LIBS"
-	  LIBS=$LIBS' -llwgeom -lgeos_c'
+	  LIBS=$LIBS' -llwgeom /usr/local/opt/geos/lib/libgeos_c.a /usr/local/opt/geos/lib/libgeos.a'
 	  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 int main() { return lwgeom_make_valid(); return 0; }
@@ -18255,7 +18256,7 @@ fi
 rm -f core conftest.err conftest.$ac_objext \
     conftest$ac_exeext conftest.$ac_ext
 	  LIBS="$_save_libs"
-	  LIBS=$LIBS' -llwgeom -lgeos_c'
+	  LIBS=$LIBS' -llwgeom /usr/local/opt/geos/lib/libgeos_c.a /usr/local/opt/geos/lib/libgeos.a'
 	#
 	# testing for PostGIS 2.1 - lwgeom_set_handlers
 	#
