@@ -17497,7 +17497,7 @@ for ac_lib in '' proj; do
   if test -z "$ac_lib"; then
     ac_res="none required"
   else
-    ac_res=-l$ac_lib
+    ac_res="/usr/local/opt/proj/lib/libproj.a"
     # LIBS="-l$ac_lib -lm $ac_func_search_save_LIBS"
     LIBS="/usr/local/opt/proj/lib/libproj.a -lm $ac_func_search_save_LIBS"
   fi
@@ -18181,8 +18181,8 @@ for ac_lib in '' geos_c; do
   if test -z "$ac_lib"; then
     ac_res="none required"
   else
-    ac_res=-l$ac_lib
-    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
+    ac_res="-lc++ /usr/local/opt/geos/lib/libgeos_c.a /usr/local/opt/geos/lib/libgeos.a"
+    LIBS="-lc++ /usr/local/opt/geos/lib/libgeos_c.a /usr/local/opt/geos/lib/libgeos.a  $ac_func_search_save_LIBS"
   fi
   if ac_fn_c_try_link "$LINENO"; then :
   ac_cv_search_GEOSDelaunayTriangulation=$ac_res
