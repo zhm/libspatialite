@@ -17497,8 +17497,8 @@ for ac_lib in '' proj; do
   if test -z "$ac_lib"; then
     ac_res="none required"
   else
-    ac_res=-l$ac_lib
-    LIBS="-l$ac_lib -lm $ac_func_search_save_LIBS"
+    ac_res="-pthread /home/vagrant/src/proj/src/.libs/libproj.a"
+    LIBS="-pthread /home/vagrant/src/proj/src/.libs/libproj.a -lm $ac_func_search_save_LIBS"
   fi
   if ac_fn_c_try_link "$LINENO"; then :
   ac_cv_search_pj_init_plus=$ac_res
@@ -17555,8 +17555,8 @@ for ac_lib in '' proj; do
   if test -z "$ac_lib"; then
     ac_res="none required"
   else
-    ac_res=-l$ac_lib
-    LIBS="-l$ac_lib -lm $ac_func_search_save_LIBS"
+    ac_res="-pthread /home/vagrant/src/proj/src/.libs/libproj.a -lm"
+    LIBS="-pthread /home/vagrant/src/proj/src/.libs/libproj.a -lm $ac_func_search_save_LIBS"
   fi
   if ac_fn_c_try_link "$LINENO"; then :
   ac_cv_search_pj_init_ctx=$ac_res
@@ -18093,8 +18093,8 @@ for ac_lib in '' geos_c; do
   if test -z "$ac_lib"; then
     ac_res="none required"
   else
-    ac_res=-l$ac_lib
-    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
+    ac_res="/home/vagrant/src/geos/capi/.libs/libgeos_c.a /home/vagrant/src/geos/src/.libs/libgeos.a -lstdc++ -lm"
+    LIBS="/home/vagrant/src/geos/capi/.libs/libgeos_c.a /home/vagrant/src/geos/src/.libs/libgeos.a -lstdc++ -lm $ac_func_search_save_LIBS"
   fi
   if ac_fn_c_try_link "$LINENO"; then :
   ac_cv_search_GEOSCoveredBy=$ac_res
@@ -18124,7 +18124,7 @@ else
 fi
 
   LIBS="$LIBS_SAVE"
-  LIBS="$LIBS $GEOS_LDFLAGS -lgeos_c"
+  LIBS="$LIBS $GEOS_LDFLAGS /home/vagrant/src/geos/capi/.libs/libgeos_c.a /home/vagrant/src/geos/src/.libs/libgeos.a -lstdc++ -lm"
 
   #-----------------------------------------------------------------------
   #   --enable-controlpoints
@@ -18177,12 +18177,12 @@ return GEOSDelaunayTriangulation ();
 }
 _ACEOF
 for ac_lib in '' geos_c; do
-  if test -z "$ac_lib"; then
-    ac_res="none required"
-  else
-    ac_res=-l$ac_lib
-    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
-  fi
+  #if test -z "$ac_lib"; then
+  #  ac_res="none required"
+  #else
+    ac_res="/home/vagrant/src/geos/capi/.libs/libgeos_c.a /home/vagrant/src/geos/src/.libs/libgeos.a -lstdc++ -lm"
+    LIBS="/home/vagrant/src/geos/capi/.libs/libgeos_c.a /home/vagrant/src/geos/src/.libs/libgeos.a -lstdc++ -lm $ac_func_search_save_LIBS"
+  #fi
   if ac_fn_c_try_link "$LINENO"; then :
   ac_cv_search_GEOSDelaunayTriangulation=$ac_res
 fi
@@ -18240,7 +18240,7 @@ fi
 done
 
 	  _save_libs="$LIBS"
-	  LIBS=$LIBS' -llwgeom -lgeos_c'
+	  LIBS=$LIBS' -llwgeom /home/vagrant/src/geos/capi/.libs/libgeos_c.a /home/vagrant/src/geos/src/.libs/libgeos.a'
 	  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 int main() { return lwgeom_make_valid(); return 0; }
@@ -18255,7 +18255,7 @@ fi
 rm -f core conftest.err conftest.$ac_objext \
     conftest$ac_exeext conftest.$ac_ext
 	  LIBS="$_save_libs"
-	  LIBS=$LIBS' -llwgeom -lgeos_c'
+	  LIBS=$LIBS' -llwgeom /home/vagrant/src/geos/capi/.libs/libgeos_c.a /home/vagrant/src/geos/src/.libs/libgeos.a'
 	#
 	# testing for PostGIS 2.1 - lwgeom_set_handlers
 	#
